@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9102465E257884410098060B /* RTKLEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9102465C257884390098060B /* RTKLEFoundation.framework */; };
+		9102465F257884410098060B /* RTKLEFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9102465C257884390098060B /* RTKLEFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9157438B25772B5F008B319A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9157438A25772B5F008B319A /* AppDelegate.m */; };
+		9157439425772B5F008B319A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9157439225772B5F008B319A /* Main.storyboard */; };
+		9157439625772B60008B319A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9157439525772B60008B319A /* Assets.xcassets */; };
+		9157439925772B60008B319A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9157439725772B60008B319A /* LaunchScreen.storyboard */; };
+		9157439C25772B60008B319A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9157439B25772B60008B319A /* main.m */; };
+		91574439257732D6008B319A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9157442D257732D6008B319A /* LICENSE */; };
+		9157443A257732D6008B319A /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9157442F257732D6008B319A /* SVRadialGradientLayer.m */; };
+		9157443B257732D6008B319A /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91574432257732D6008B319A /* SVProgressAnimatedView.m */; };
+		9157443C257732D6008B319A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 91574434257732D6008B319A /* SVProgressHUD.m */; };
+		9157443D257732D6008B319A /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91574435257732D6008B319A /* SVIndefiniteAnimatedView.m */; };
+		9157443E257732D6008B319A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 91574436257732D6008B319A /* SVProgressHUD.bundle */; };
+		9157443F257732D6008B319A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 91574438257732D6008B319A /* README.md */; };
+		9157449025773A08008B319A /* RTKOTASDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915743C825772B80008B319A /* RTKOTASDK.framework */; };
+		9157449125773A08008B319A /* RTKOTASDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 915743C825772B80008B319A /* RTKOTASDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9157449625773C6F008B319A /* BleDevicesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9157449525773C6F008B319A /* BleDevicesVC.m */; };
+		9157449E25773DC4008B319A /* BleDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9157449C25773DC4008B319A /* BleDeviceModel.m */; };
+		915744DD25776C79008B319A /* OTAFilesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 915744DC25776C79008B319A /* OTAFilesVC.m */; };
+		915744EB2577796F008B319A /* ImgPacketFile-3afb193b40e40dec6db3d7349c50fd06.bin in Resources */ = {isa = PBXBuildFile; fileRef = 915744E92577796F008B319A /* ImgPacketFile-3afb193b40e40dec6db3d7349c50fd06.bin */; };
+		915744EC2577796F008B319A /* ImgPacketFile-b990db5a55a7c91006fa7a358f23b713.bin in Resources */ = {isa = PBXBuildFile; fileRef = 915744EA2577796F008B319A /* ImgPacketFile-b990db5a55a7c91006fa7a358f23b713.bin */; };
+		915C9BFB25777F8C00446A35 /* RTKOTA.m in Sources */ = {isa = PBXBuildFile; fileRef = 915C9BFA25777F8C00446A35 /* RTKOTA.m */; };
+		91E1C0962596C00A0055C161 /* OTAVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E1C0942596C00A0055C161 /* OTAVC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9157448D25773A04008B319A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9102465F257884410098060B /* RTKLEFoundation.framework in Embed Frameworks */,
+				9157449125773A08008B319A /* RTKOTASDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5BA4B3C62599D6390056A63D /* RTKOTA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTKOTA.h; sourceTree = "<group>"; };
+		5BA4B3CB2599D6730056A63D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9102465C257884390098060B /* RTKLEFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTKLEFoundation.framework; sourceTree = "<group>"; };
+		9157438625772B5F008B319A /* RTKOTADemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTKOTADemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9157438925772B5F008B319A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9157438A25772B5F008B319A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9157439325772B5F008B319A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9157439525772B60008B319A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9157439825772B60008B319A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9157439A25772B60008B319A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9157439B25772B60008B319A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		915743C825772B80008B319A /* RTKOTASDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTKOTASDK.framework; sourceTree = "<group>"; };
+		9157442D257732D6008B319A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9157442F257732D6008B319A /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		91574430257732D6008B319A /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		91574431257732D6008B319A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		91574432257732D6008B319A /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		91574433257732D6008B319A /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		91574434257732D6008B319A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		91574435257732D6008B319A /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		91574436257732D6008B319A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		91574437257732D6008B319A /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		91574438257732D6008B319A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9157449425773C6F008B319A /* BleDevicesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BleDevicesVC.h; sourceTree = "<group>"; };
+		9157449525773C6F008B319A /* BleDevicesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BleDevicesVC.m; sourceTree = "<group>"; };
+		9157449A25773DC4008B319A /* BleDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BleDeviceModel.h; sourceTree = "<group>"; };
+		9157449C25773DC4008B319A /* BleDeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BleDeviceModel.m; sourceTree = "<group>"; };
+		915744DB25776C79008B319A /* OTAFilesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTAFilesVC.h; sourceTree = "<group>"; };
+		915744DC25776C79008B319A /* OTAFilesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTAFilesVC.m; sourceTree = "<group>"; };
+		915744E92577796F008B319A /* ImgPacketFile-3afb193b40e40dec6db3d7349c50fd06.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "ImgPacketFile-3afb193b40e40dec6db3d7349c50fd06.bin"; sourceTree = "<group>"; };
+		915744EA2577796F008B319A /* ImgPacketFile-b990db5a55a7c91006fa7a358f23b713.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "ImgPacketFile-b990db5a55a7c91006fa7a358f23b713.bin"; sourceTree = "<group>"; };
+		915C9BFA25777F8C00446A35 /* RTKOTA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTKOTA.m; sourceTree = "<group>"; };
+		91E1C0942596C00A0055C161 /* OTAVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTAVC.m; sourceTree = "<group>"; };
+		91E1C0952596C00A0055C161 /* OTAVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTAVC.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9157438325772B5F008B319A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9157449025773A08008B319A /* RTKOTASDK.framework in Frameworks */,
+				9102465E257884410098060B /* RTKLEFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9157437D25772B5F008B319A = {
+			isa = PBXGroup;
+			children = (
+				9102465C257884390098060B /* RTKLEFoundation.framework */,
+				915743C825772B80008B319A /* RTKOTASDK.framework */,
+				9157438825772B5F008B319A /* RTKOTADemo */,
+				9157438725772B5F008B319A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9157438725772B5F008B319A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9157438625772B5F008B319A /* RTKOTADemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9157438825772B5F008B319A /* RTKOTADemo */ = {
+			isa = PBXGroup;
+			children = (
+				9157438925772B5F008B319A /* AppDelegate.h */,
+				9157438A25772B5F008B319A /* AppDelegate.m */,
+				5BA4B3C62599D6390056A63D /* RTKOTA.h */,
+				915C9BFA25777F8C00446A35 /* RTKOTA.m */,
+				91E1C0A52596C85D0055C161 /* Page */,
+				9157442C257732D6008B319A /* SVProgressHUD */,
+				915744E82577796F008B319A /* firmwares */,
+				9157439225772B5F008B319A /* Main.storyboard */,
+				9157439525772B60008B319A /* Assets.xcassets */,
+				9157439725772B60008B319A /* LaunchScreen.storyboard */,
+				9157439A25772B60008B319A /* Info.plist */,
+				9157439B25772B60008B319A /* main.m */,
+				5BA4B3CB2599D6730056A63D /* README.md */,
+			);
+			path = RTKOTADemo;
+			sourceTree = "<group>";
+		};
+		9157442C257732D6008B319A /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				9157442D257732D6008B319A /* LICENSE */,
+				9157442E257732D6008B319A /* SVProgressHUD */,
+				91574438257732D6008B319A /* README.md */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		9157442E257732D6008B319A /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				9157442F257732D6008B319A /* SVRadialGradientLayer.m */,
+				91574430257732D6008B319A /* SVIndefiniteAnimatedView.h */,
+				91574431257732D6008B319A /* SVProgressHUD.h */,
+				91574432257732D6008B319A /* SVProgressAnimatedView.m */,
+				91574433257732D6008B319A /* SVRadialGradientLayer.h */,
+				91574434257732D6008B319A /* SVProgressHUD.m */,
+				91574435257732D6008B319A /* SVIndefiniteAnimatedView.m */,
+				91574436257732D6008B319A /* SVProgressHUD.bundle */,
+				91574437257732D6008B319A /* SVProgressAnimatedView.h */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		915744E82577796F008B319A /* firmwares */ = {
+			isa = PBXGroup;
+			children = (
+				915744E92577796F008B319A /* ImgPacketFile-3afb193b40e40dec6db3d7349c50fd06.bin */,
+				915744EA2577796F008B319A /* ImgPacketFile-b990db5a55a7c91006fa7a358f23b713.bin */,
+			);
+			path = firmwares;
+			sourceTree = "<group>";
+		};
+		91E1C0A52596C85D0055C161 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				91E1C0952596C00A0055C161 /* OTAVC.h */,
+				91E1C0942596C00A0055C161 /* OTAVC.m */,
+				9157449425773C6F008B319A /* BleDevicesVC.h */,
+				9157449525773C6F008B319A /* BleDevicesVC.m */,
+				915744DB25776C79008B319A /* OTAFilesVC.h */,
+				915744DC25776C79008B319A /* OTAFilesVC.m */,
+				9157449A25773DC4008B319A /* BleDeviceModel.h */,
+				9157449C25773DC4008B319A /* BleDeviceModel.m */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9157438525772B5F008B319A /* RTKOTADemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 915743B525772B60008B319A /* Build configuration list for PBXNativeTarget "RTKOTADemo" */;
+			buildPhases = (
+				9157438225772B5F008B319A /* Sources */,
+				9157438325772B5F008B319A /* Frameworks */,
+				9157438425772B5F008B319A /* Resources */,
+				9157448D25773A04008B319A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RTKOTADemo;
+			productName = TestOTA2;
+			productReference = 9157438625772B5F008B319A /* RTKOTADemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9157437E25772B5F008B319A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					9157438525772B5F008B319A = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 9157438125772B5F008B319A /* Build configuration list for PBXProject "RTKOTADemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9157437D25772B5F008B319A;
+			productRefGroup = 9157438725772B5F008B319A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9157438525772B5F008B319A /* RTKOTADemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9157438425772B5F008B319A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9157443F257732D6008B319A /* README.md in Resources */,
+				9157443E257732D6008B319A /* SVProgressHUD.bundle in Resources */,
+				9157439925772B60008B319A /* LaunchScreen.storyboard in Resources */,
+				9157439625772B60008B319A /* Assets.xcassets in Resources */,
+				91574439257732D6008B319A /* LICENSE in Resources */,
+				915744EB2577796F008B319A /* ImgPacketFile-3afb193b40e40dec6db3d7349c50fd06.bin in Resources */,
+				9157439425772B5F008B319A /* Main.storyboard in Resources */,
+				915744EC2577796F008B319A /* ImgPacketFile-b990db5a55a7c91006fa7a358f23b713.bin in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9157438225772B5F008B319A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9157438B25772B5F008B319A /* AppDelegate.m in Sources */,
+				9157443C257732D6008B319A /* SVProgressHUD.m in Sources */,
+				9157439C25772B60008B319A /* main.m in Sources */,
+				91E1C0962596C00A0055C161 /* OTAVC.m in Sources */,
+				9157449625773C6F008B319A /* BleDevicesVC.m in Sources */,
+				9157443A257732D6008B319A /* SVRadialGradientLayer.m in Sources */,
+				9157443D257732D6008B319A /* SVIndefiniteAnimatedView.m in Sources */,
+				9157443B257732D6008B319A /* SVProgressAnimatedView.m in Sources */,
+				915C9BFB25777F8C00446A35 /* RTKOTA.m in Sources */,
+				9157449E25773DC4008B319A /* BleDeviceModel.m in Sources */,
+				915744DD25776C79008B319A /* OTAFilesVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9157439225772B5F008B319A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9157439325772B5F008B319A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9157439725772B60008B319A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9157439825772B60008B319A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		915743B325772B60008B319A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		915743B425772B60008B319A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		915743B625772B60008B319A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C33NB6H2NR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = RTKOTADemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.larry.project;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		915743B725772B60008B319A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C33NB6H2NR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = RTKOTADemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.larry.project;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9157438125772B5F008B319A /* Build configuration list for PBXProject "RTKOTADemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				915743B325772B60008B319A /* Debug */,
+				915743B425772B60008B319A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		915743B525772B60008B319A /* Build configuration list for PBXNativeTarget "RTKOTADemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				915743B625772B60008B319A /* Debug */,
+				915743B725772B60008B319A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9157437E25772B5F008B319A /* Project object */;
+}
