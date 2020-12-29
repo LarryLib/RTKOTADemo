@@ -22,6 +22,10 @@
     NSDate *_timeUpgradeBegin;
     
     NSArray <RTKOTAUpgradeBin*> *_images;
+    
+    RTKUpgradeProgress _progress;
+    RTKUpgradeFinish _finish;
+    RTKUpgradeFail _fail;
 }
 
 - (NSArray <RTKOTAUpgradeBin*> *)toUpgradeImages {
@@ -35,13 +39,16 @@
 #pragma Public
 
 #pragma mark - 1、init OTAPeripheral
-- (void)upgradePeripheral:(CBPeripheral *)peripheral file:(NSString *)filePath {
+- (void)upgradePeripheral:(CBPeripheral *)peripheral file:(NSString *)filePath progress:(RTKUpgradeProgress)progress finish:(RTKUpgradeFinish)finish fail:(RTKUpgradeFail)fail {
+    _progress = progress;
+    _finish = finish;
+    _fail = fail;
     if (peripheral == nil) {
-        [self.delegate upgradeError:UE_reconnect];
+        _fail(UE_reconnect);
         return;
     }
     if (filePath == nil) {
-        [self.delegate upgradeError:UE_fileInvalid];
+        _fail(UE_fileInvalid);
         return;
     }
     
@@ -64,7 +71,7 @@
             
             [self verifyFile:filePath];
         } else {
-            [self.delegate upgradeError:UE_peripheralInvalid];
+            self->_fail(UE_peripheralInvalid);
         }
     });
 }
@@ -72,7 +79,7 @@
 #pragma mark - 2、select file/files
 - (void)verifyFile:(NSString *)filePath {
     if (self.OTAPeripheral == nil) {
-        [self.delegate upgradeError:UE_reconnect];
+        _fail(UE_reconnect);
         return;
     }
     
@@ -81,7 +88,7 @@
     NSError *error;
     _images = [RTKOTAUpgradeBin imagesExtractedFromMPPackFilePath:filePath error:&error];
     if (error || _images.count == 0) {
-        [self.delegate upgradeError:UE_reconnect];
+        _fail(UE_reconnect);
         return;
     }
     NSLog(@"verifyFile suceess");
@@ -96,7 +103,7 @@
            if (self.OTAPeripheral.canEnterOTAMode && self.OTAPeripheral.canUpgradeSliently) {
                 RTKDFUPeripheral *DFUPeripheral = [self.OTAProfile DFUPeripheralOfOTAPeripheral:self.OTAPeripheral];
                 if (!DFUPeripheral) {
-                    [self.delegate upgradeError:UE_reconnect];
+                    self->_fail(UE_reconnect);
                     return ;
                 }
                
@@ -104,10 +111,10 @@
                 [self.OTAProfile connectTo:DFUPeripheral];
                 self.DFUPeripheral = (RTKMultiDFUPeripheral*)DFUPeripheral;
            } else {
-               [self.delegate upgradeError:UE_reconnect];
+               self->_fail(UE_reconnect);
            }
         } else {
-            [self.delegate upgradeError:UE_reconnect];
+            self->_fail(UE_reconnect);
         }
     });
 }
@@ -139,13 +146,13 @@
 }
 
 - (void)profile:(RTKLEProfile *)profile didFailToConnectPeripheral:(RTKLEPeripheral *)peripheral error:(nullable NSError *)error {
-    [self.delegate upgradeError:UE_connectFail];
+    _fail(UE_connectFail);
 }
 
 #pragma mark - RTKMultiDFUPeripheralDelegate
 
 - (void)DFUPeripheral:(RTKDFUPeripheral *)peripheral didSend:(NSUInteger)length totalToSend:(NSUInteger)totalLength {
-    [self.delegate DFUPeripheral:peripheral didSend:length totalToSend:totalLength];
+    _progress(peripheral, length, totalLength);
 }
 
 - (void)presentTransmissionSpeed {
@@ -157,13 +164,14 @@
         NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:self->_timeUpgradeBegin];
         
         NSString *msg = [@"升级完成。\n" stringByAppendingFormat:@"平均速率：%.2f KB/s", (lengthTotalImages/1000.)/interval];
-        [self.delegate upgradeFinish:msg];
+        NSLog(@"%@", msg);
+        self->_finish(msg);
     });
 }
 
 - (void)DFUPeripheral:(RTKDFUPeripheral *)peripheral didFinishWithError:(nullable NSError *)err {
     if (err) {
-        [self.delegate upgradeError: UE_unknown];
+        _fail(UE_unknown);
     } else {
         // 计算总传输速率
         [self presentTransmissionSpeed];

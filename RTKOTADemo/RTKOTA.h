@@ -17,21 +17,12 @@ static UpgradeError const UE_peripheralInvalid = @"选择的蓝牙无效或不�
 static UpgradeError const UE_fileInvalid = @"选择的文件无效或不匹配";
 static UpgradeError const UE_unknown = @"升级失败";
 
-
-
-//  升级 回调 协议
-@protocol OTAProtocol <NSObject>
-
-- (void)DFUPeripheral:(RTKDFUPeripheral *)peripheral didSend:(NSUInteger)length totalToSend:(NSUInteger)totalLength;
-- (void)upgradeFinish:(NSString *)msg;
-- (void)upgradeError:(UpgradeError)error;
-
-@end
+typedef void(^RTKUpgradeFinish)(NSString *);
+typedef void(^RTKUpgradeFail)(UpgradeError);
+typedef void(^RTKUpgradeProgress)(RTKDFUPeripheral *,NSUInteger, NSUInteger);
 
 @interface RTKOTA: NSObject
 
-@property (nonatomic, strong) id<OTAProtocol> delegate;
-
-- (void)upgradePeripheral:(CBPeripheral *)peripheral file:(NSString *)filePath;
+- (void)upgradePeripheral:(CBPeripheral *)peripheral file:(NSString *)filePath progress:(RTKUpgradeProgress)progress finish:(RTKUpgradeFinish)finish fail:(RTKUpgradeFail)error;
 
 @end

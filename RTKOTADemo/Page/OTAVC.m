@@ -13,7 +13,7 @@
 #import "BleDevicesVC.h"
 #import "OTAFilesVC.h"
 
-@interface OTAVC () <UITableViewDelegate, UITableViewDataSource, OTAProtocol>
+@interface OTAVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) CBPeripheral *peripheral;
 @property (nonatomic, strong) NSString *filePath;
 
@@ -31,7 +31,6 @@
     self.title = @"OTA";
     
     _rtkOTA = [RTKOTA new];
-    _rtkOTA.delegate = self;
     
     self.tableView = [[UITableView alloc]initWithFrame: [UIScreen mainScreen].bounds style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
@@ -86,7 +85,28 @@
             [self.navigationController pushViewController:vc animated:YES];
         } else if(indexPath.row == 2) {
             [SVProgressHUD showWithStatus:@"请稍后"];
-            [_rtkOTA upgradePeripheral:_peripheral file:_filePath];
+            [_rtkOTA upgradePeripheral:_peripheral file:_filePath progress:^(RTKDFUPeripheral *peripheral, NSUInteger length, NSUInteger totalLength) {
+                [SVProgressHUD showProgress:((float)length)/totalLength status:[NSString stringWithFormat:@"Updating...\n %lu/%lu", (unsigned long)length, (unsigned long)totalLength]];
+            } finish:^(NSString *msg){
+                NSLog(@"%@", msg);
+                [SVProgressHUD showSuccessWithStatus:msg];
+                [SVProgressHUD dismissWithDelay:2];
+            
+                self->_peripheral = nil;
+                self->_filePath = nil;
+                [self.tableView reloadData];
+            } fail:^(UpgradeError error){
+                NSString *errorStr = [NSString stringWithFormat:@"%@", error];
+                NSLog(@"%@", errorStr);
+                NSLog(@"%@", error);
+                [SVProgressHUD showErrorWithStatus:errorStr];
+                [SVProgressHUD dismissWithDelay:2];
+                
+                self->_peripheral = nil;
+                self->_filePath = nil;
+                [self.tableView reloadData];
+            }];
+
         }
     }
 }
@@ -98,33 +118,6 @@
 
 - (void)haveSelectedFile:(NSString *)filePath {
     _filePath = filePath;
-    [self.tableView reloadData];
-}
-
-#pragma mark  升级回调
-- (void)DFUPeripheral:(RTKDFUPeripheral *)peripheral didSend:(NSUInteger)length totalToSend:(NSUInteger)totalLength {
-    [SVProgressHUD showProgress:((float)length)/totalLength status:[NSString stringWithFormat:@"Updating...\n %lu/%lu", (unsigned long)length, (unsigned long)totalLength]];
-}
-
-- (void)upgradeFinish:(NSString *)msg {
-    NSLog(msg);
-    [SVProgressHUD showSuccessWithStatus:msg];
-    [SVProgressHUD dismissWithDelay:2];
-    
-    _peripheral = nil;
-    _filePath = nil;
-    [self.tableView reloadData];
-}
-
-- (void)upgradeError:(UpgradeError)error {
-    NSString *errorStr = [NSString stringWithFormat:@"%@", error];
-    NSLog(errorStr);
-    NSLog(error);
-    [SVProgressHUD showErrorWithStatus:errorStr];
-    [SVProgressHUD dismissWithDelay:2];
-    
-    _peripheral = nil;
-    _filePath = nil;
     [self.tableView reloadData];
 }
 
